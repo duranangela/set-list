@@ -1,10 +1,24 @@
-<% @songs.each do |song| %>
-<ul>
-  <li><%= song.title %></li>
-  <li><%= song.length %></li>
-  <li><%= song.play_count %></li>
-  <% if song.playlist %>
-    <li><%= song.playlist.name %></li>
-  <% end %>
-</ul>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='/style.css' >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <title>Songs List</title>
+  </head>
+  <body>
+    <div class='title'>
+      <h1>Songs</h1>
+    </div>
+    <div class='songs'>
+      <% @songs.each do |song| %>
+        <div class='song-instance'>
+          <img src='/download.jpg'/>
+          <p><%= song.title %></p>
+          <p><%= song.length %> seconds</p>
+          <p>Play Count <%= song.play_count %></p>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>
